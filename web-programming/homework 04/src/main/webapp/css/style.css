@@ -1,0 +1,261 @@
+:root {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    color: rgb(34, 34, 34);
+
+    --border-color: rgb(185, 185, 185);
+    --boder: 1px solid var(--border-color);
+    --border-radius: 6px;
+    --caption-color: #3B5998;
+}
+
+html {
+    min-width: 800px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.user-color {
+    text-decoration: none;
+    font-family: helvetica neue,Helvetica,Arial,sans-serif;
+}
+
+.user-color-green {
+    color: green;
+}
+
+.user-color-blue {
+    color: blue;
+}
+
+.user-color-red {
+    color: red;
+}
+
+header {
+    position: relative;
+}
+
+header .languages {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+header .enter-or-register-box {
+    position: absolute;
+    top: calc(24px + 0.5rem);
+    right: 0;
+}
+
+header nav {
+    border: var(--boder);
+    border-radius: var(--border-radius);
+    margin: 0.5rem 0 2rem 0;
+}
+
+header nav ul {
+    padding: 0;
+    margin: 1rem;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin-right: 1rem;
+}
+
+header nav .page_with_underline {
+    display: inline-block;
+}
+
+header nav .page_with_underline a {
+    border-bottom: solid 4px var(--caption-color);
+}
+
+.middle {
+    display: flow-root;
+}
+
+aside {
+    float: right;
+    width: 20rem;
+}
+
+aside section {
+    border: var(--boder);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+aside section .header {
+    border-bottom: var(--boder);
+    padding: 0.25rem;
+    font-weight: bold;
+    color: var(--caption-color);
+}
+
+aside section .header:before {
+    content: "→ ";
+    font-size: 1.1rem;
+}
+
+aside section .body {
+    padding: 0.25rem;
+}
+
+aside section .footer {
+    border-top: var(--boder);
+    padding: 0.25rem;
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+aside section .footer a:after {
+    content: " →";
+}
+
+main {
+    margin-right: 21rem;
+}
+
+main .user .personal-information {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    display: flow-root;
+    min-height: 150px;
+}
+
+main .user .personal-information .info {
+    display: inline-block;
+}
+
+main .user .personal-information .info .username {
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+}
+
+main .user .personal-information .info ul {
+    margin: 0;
+}
+
+main .user .personal-information .user-avatar {
+    padding: 0.5rem;
+    float: right;
+}
+
+main .user .arrows div {
+    display: inline;
+}
+
+main .user .arrows a {
+    text-decoration: none;
+}
+
+/*from hw2.2*/
+main article {
+    margin-bottom: 2rem;
+}
+
+main article .title {
+    color: var(--caption-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
+main article .body {
+    margin: 1rem 0;
+    border-left: 0.25rem solid var(--border-color);
+    padding-left: 1rem;
+}
+
+main article .attachment {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+main article .attachment li:before {
+    content: url("../img/paperclip-16x16.png") " ";
+}
+
+main article .attachment .information,
+main article .attachment .attachment {
+    color: #888;
+}
+
+main article .footer {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    position: relative;
+}
+
+main article .footer div {
+    display: inline-flex;
+    align-items: center;
+}
+
+main article .footer div img {
+    padding: 0 0.4rem;
+}
+
+main article .footer .right {
+    float: right;
+    margin-top: 0.2rem;
+}
+
+main article .footer .left .positive-score {
+    font-weight: bold;
+    color: #367A1B;
+}
+
+/*from hw2.3*/
+main .caption {
+    margin: 0;
+    padding: 5px 5px 5px 10px;
+    background-color: #E1E1E1;;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+main .datatable, table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+main table, td, th, tr {
+    border: 1px solid var(--border-color);
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+main tbody tr:nth-child(2n - 1) {
+    background: #F8F8F8;
+}
+
+main .text404 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: var(--boder);
+    text-align: center;
+}
