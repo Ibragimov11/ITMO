@@ -1,0 +1,15 @@
+header nav .search {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: right;
+}
+
+header nav .search input {
+    background: #f4f4f4 url(../img/search-16x16.png) 2px 50% no-repeat;
+    border: 1px solid var(--border-color);
+    margin: 0;
+    padding: 1px 1px 1px 20px;
+    height: 1rem;
+    font-size: 0.8rem;
+}

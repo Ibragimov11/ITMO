@@ -1,0 +1,84 @@
+main .login-form-box {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    width: 30rem;
+    max-width: 100%;
+    margin: auto;
+}
+
+main .login-form-box .header {
+    color: var(--caption-color);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    padding: 0.2rem;
+}
+
+main .login-form-box .body form {
+    display: flow-root;
+}
+
+main .body form > * {
+    margin-top: 1.5rem;
+}
+
+main .login-form-box .body form .links {
+    margin-top: 0;
+}
+
+main .login-form-box .body form .field .name,
+main .login-form-box .body form .field .value {
+    display: inline;
+}
+
+main .login-form-box .body form .field .name label[for=handleOrEmail] {
+    margin-left: 4.5rem;
+}
+
+main .login-form-box .body form .field .name label[for=password] {
+    margin-left: 6.5rem;
+}
+
+main .login-form-box .body form .field .name {
+    padding-right: 0.5rem;
+}
+
+main .login-form-box .body form .field .value input {
+    width: 15rem;
+    border: 1px solid var(--border-color);
+}
+
+main .login-form-box .body form .field .error,
+main .login-form-box .body form .checkbox-field,
+main .login-form-box .body form .button-field {
+    margin-left: 12rem;
+}
+
+main .login-form-box .body form .field .error,
+main .login-form-box .body form .checkbox-field {
+    font-size: 0.8rem;
+}
+
+main .login-form-box .body form .field .error {
+    color: red;
+}
+
+main .login-form-box .body form .button-field input {
+    padding: 0.1rem 1.5rem;
+}
+
+main .login-form-box .body form .links a {
+    float: right;
+    margin: 0.2rem;
+}
+
+main .login-form-box .footer {
+    display: flow-root;
+    border-top: 1px solid var(--border-color);
+}
+
+main .login-form-box .footer a {
+    float: right;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+}
