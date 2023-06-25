@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package ad;
+option go_package = "lesson9/homework/internal/ports/grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service AdService {
+  rpc CreateAd(CreateAdRequest) returns (AdResponse) {}
+  rpc ListAds(FilteredListAdsRequest) returns (ListAdResponse) {}
+  rpc GetAd(GetAdRequest) returns (AdResponse) {}
+  rpc GetAdsByTitle(GetAdsByTitleRequest) returns (ListAdResponse) {}
+  rpc UpdateAd(UpdateAdRequest) returns (AdResponse) {}
+  rpc ChangeAdStatus(ChangeAdStatusRequest) returns (AdResponse) {}
+  rpc DeleteAd(DeleteAdRequest) returns (AdResponse) {}
+
+  rpc CreateUser(CreateUserRequest) returns (UserResponse) {}
+  rpc ListUsers(google.protobuf.Empty) returns (ListUserResponse) {}
+  rpc GetUser(GetUserRequest) returns (UserResponse) {}
+  rpc UpdateUser(UpdateUserRequest) returns (UserResponse) {}
+  rpc DeleteUser(DeleteUserRequest) returns (UserResponse) {}
+}
+
+message CreateAdRequest {
+  string title = 1;
+  string text = 2;
+  int64 user_id = 3;
+}
+
+message FilteredListAdsRequest {
+  bool published_only_checked = 1;
+  bool published_only = 2;
+  bool author_id_checked = 3;
+  int64 author_id = 4;
+  bool creation_date_checked = 5;
+  google.protobuf.Timestamp creation_date = 6;
+}
+
+message GetAdRequest {
+  int64 id = 1;
+}
+
+message GetAdsByTitleRequest {
+  string title = 1;
+}
+
+message UpdateAdRequest {
+  int64 ad_id = 1;
+  string title = 2;
+  string text = 3;
+  int64 user_id = 4;
+}
+
+message ChangeAdStatusRequest {
+  int64 ad_id = 1;
+  bool published = 2;
+  int64 user_id = 3;
+}
+
+message DeleteAdRequest {
+  int64 ad_id = 1;
+  int64 user_id = 2;
+}
+
+message AdResponse {
+  int64 id = 1;
+  string title = 2;
+  string text = 3;
+  int64 author_id = 4;
+  bool published = 5;
+  google.protobuf.Timestamp creation_date = 6;
+  google.protobuf.Timestamp update_date = 7;
+}
+
+message ListAdResponse {
+  repeated AdResponse ads = 1;
+}
+
+message CreateUserRequest {
+  string nickname = 1;
+  string email = 2;
+}
+
+message GetUserRequest {
+  int64 id = 1;
+}
+
+message UpdateUserRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string email = 3;
+}
+
+message DeleteUserRequest {
+  int64 id = 1;
+}
+
+message UserResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string email = 3;
+}
+
+message ListUserResponse {
+  repeated UserResponse users = 1;
+}
