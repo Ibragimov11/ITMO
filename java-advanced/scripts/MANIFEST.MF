@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Said Ibragimov
+Class-Path: ../../java-advanced-2022/artifacts/info.kgeorgiy.java.advanced.implementor.jar
+Main-Class: info.kgeorgiy.ja.ibragimov.implementor.Implementor
