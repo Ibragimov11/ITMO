@@ -1,0 +1,42 @@
+grammar Math;
+
+import /custom.MyInt/;
+
+expr returns [value: MyInt]
+: term() exprS(term0.value) {$value = exprS1.value}
+;
+
+exprS[acc: MyInt] returns [value: MyInt]
+: PLUS term() {$value = acc + term1.value} exprS($value) {$value = exprS2.value}
+| MINUS term() {$value = acc - term1.value} exprS($value) {$value = exprS2.value}
+| ε {$value = acc}
+;
+
+term returns [value: MyInt]
+: factor() termS(factor0.value) {$value = termS1.value}
+;
+
+termS [acc: MyInt] returns [value: MyInt]
+: MUL factor() {$value = acc * factor1.value} termS($value) {$value = termS2.value}
+| DIV factor() {$value = acc / factor1.value} termS($value) {$value = termS2.value}
+| ε {$value = acc}
+;
+
+factor returns [value: MyInt]
+: NUM {$value = MyInt(NUM0.toInt())}
+| OPEN expr() CLOSE {$value = expr1.value}
+| MINUS unary() {$value = unary1.value}
+;
+
+unary returns [value: MyInt]
+: NUM {$value = MyInt(("-" + NUM0).toInt())}
+| OPEN expr() CLOSE {$value = -expr1.value}
+;
+
+PLUS: "\\+";
+MINUS: "-";
+MUL: "\\*";
+DIV: "/";
+NUM: "(0|[1-9][0-9]*)";
+OPEN: "\\(";
+CLOSE: "\\)";

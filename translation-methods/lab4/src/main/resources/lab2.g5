@@ -1,0 +1,35 @@
+grammar PythonToC;
+
+input: LAMBDA v COLON le;
+
+v: vars | ε;
+
+vars: VAR varsS;
+
+varsS: COMMA VAR varsS | ε;
+
+le: lt leS;
+leS: OR lt leS | ε;
+
+lt: e ltS;
+ltS: AND e ltS | ε;
+
+e: t eS;
+eS: ADD t eS | ε;
+
+t: f tS;
+tS: MUL f tS | ε;
+
+f: OPEN le CLOSE | VAR | NUM;
+
+LAMBDA: "lambda";
+COMMA: ",";
+OR: "\\|";
+AND: "&";
+MUL: "\\*";
+ADD: "\\+";
+OPEN: "\\(";
+CLOSE: "\\)";
+COLON: ":";
+NUM: "(0|[1-9][0-9]*)";
+VAR: "[a-z][A-Z]*";
