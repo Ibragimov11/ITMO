@@ -1,2 +1,2 @@
-# ITMO
-### Решения домашних и лабораторных работ на кафедре КТ
+# ITMO-
+### Solutions for home and laboratory work at the Department of Computer Science
